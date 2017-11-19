@@ -16,6 +16,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Prueba {
     
     private static WebDriver driverC=null;
+    
     private static WebDriver driverF=null;
 
     /**
