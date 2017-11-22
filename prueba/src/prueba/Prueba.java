@@ -17,14 +17,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  */
 public class Prueba {
 
-    private static WebDriver driverC = null;
+    public static WebDriver driverC = null;
     private static WebDriver driverF = null;
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Yoha\\Downloads\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\SANTIAGO\\Downloads\\chromedriver.exe");
         driverC = new ChromeDriver();
         driverC.get("http:\\automationpractice.com/index.php");
 

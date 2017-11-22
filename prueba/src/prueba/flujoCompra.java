@@ -36,4 +36,16 @@ public class flujoCompra {
     return element;
  
     }
+    
+    public static WebElement search2(WebDriver driver, String Id, String texto){
+ 
+    element = driver.findElement(By.className(Id));
+    element.click();
+    element.clear();
+    element.sendKeys(texto);
+    element.submit();
+    
+    return element;
+ 
+    }
 }
