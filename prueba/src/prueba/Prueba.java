@@ -24,52 +24,27 @@ public class Prueba {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Yoha\\Downloads\\chromedriver.exe");
-        WebElement search;
-        WebElement button;
-        WebElement addCar;
-        WebElement checkout;
-
         driverC = new ChromeDriver();
         driverC.get("http:\\automationpractice.com/index.php");
 
-        search = driverC.findElement(By.id("search_query_top"));
-        search.click();
-        search.sendKeys("chiffon dress");
-        search.submit();
-
-        button = driverC.findElement(By.className("ajax_add_to_cart_button"));
-        button.click();
-
+        flujoCompra.search(driverC,"search_query_top","chiffon dress");
+        flujoCompra.button(driverC, "ajax_add_to_cart_button");
+        
+        flujoCompra.search(driverC, "search_query_top", "Blouse");
+        flujoCompra.button(driverC, "ajax_add_to_cart_button");
         // addCar = driverC.findElement(By.xpath("div[contains(@class,'button-container')/span/span"));
         // addCar.click();
         // addCar = driverC.findElement(By.className("cross"));
         //addCar.click();
-//        
-        search = driverC.findElement(By.id("search_query_top"));
-        search.click();
-        search.clear();
-        search.sendKeys("Blouse");
-        search.submit();
-        
-        button = driverC.findElement(By.className("ajax_add_to_cart_button"));
-        button.click();
-         
-        
-        search = driverC.findElement(By.id("search_query_top"));
-        search.click();
-        search.clear();
-        search.submit();
-        
-        checkout = driverC.findElement(By.className("shopping_cart"));
-        checkout.click();
 
-        checkout = driverC.findElement(By.id("center_column"));
-        checkout.click();
+       // flujoCompra.search(driverC, "search_query_top", "");
+        
+        driverC.get("http:\\automationpractice.com/index.php?controller=order");
+          
+        
         // driverC.
         // driverF = new FirefoxDriver();
-        //driverF.get("http:\\automationpractice.com/index.php");
     }
 
 }
